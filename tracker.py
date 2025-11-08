@@ -1,3 +1,14 @@
+# ==========================================================
+# Project: Daily Calorie Tracker CLI
+# Author: Pravindra Singh
+# Roll No: 2501730132
+# University: K.R. Mangalam University
+# Date: 8 Nov 2025
+# Description: A simple Python-based command-line tool to track
+# daily calorie intake, compare it with your daily limit, and
+# save session data into a text file.
+# ==========================================================
+
 import datetime
 
 print("==========================================================")
@@ -5,7 +16,6 @@ print("🧠 Welcome to the Daily Calorie Tracker CLI")
 print("This program helps you record your meals and calorie intake,")
 print("calculate total and average calories, and compare with your limit.")
 print("==========================================================\n")
-
 
 meal_names = []
 meal_calories = []
@@ -28,7 +38,6 @@ for i in range(num_meals):
     meal_calories.append(calories)
 
 total_calories = sum(meal_calories)
-
 average_calories = total_calories / len(meal_calories)
 
 try:
@@ -36,7 +45,6 @@ try:
 except ValueError:
     print("⚠️  Invalid input! Please enter a valid number.")
     exit()
-
 
 print("\n==========================================================")
 print("📊 DAILY CALORIE SUMMARY")
@@ -54,7 +62,6 @@ if total_calories > daily_limit:
     print(f"⚠️  WARNING: You have exceeded your daily limit by {total_calories - daily_limit:.2f} calories!")
 else:
     print(f"✅ Great job! You are within your daily limit by {daily_limit - total_calories:.2f} calories.")
-
 
 save = input("\n💾 Do you want to save this session to a file? (yes/no): ").lower()
 if save == "yes":
